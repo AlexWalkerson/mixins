@@ -1,0 +1,35 @@
+//компилим стили в файл для ИЕ
+@mixin fix-ie {
+  @if $fix-ie {
+    @content;
+  }
+}
+//компилим стили для остальных браузеров
+@mixin fix-all {
+  @if $fix-ie == false {
+    @content;
+  }
+}
+
+
+@mixin respond($width, $extrema: min) {
+  @if $fix-ie { 
+    @content; //стили для ИЕ
+  }
+  @else {     
+    @media screen and (#{$extrema}-width: $width) {
+      @content; //стили для респонсива
+    }
+  }
+}
+
+@mixin respond-and($min-width, $max-width) {
+  @if $fix-ie {
+    @content;
+  }
+  @else {
+  	@media screen and (min-width: $min-width) and (max-width: $max-width) {
+			@content;
+		}
+  }
+}

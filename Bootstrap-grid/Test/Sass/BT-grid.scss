@@ -1,0 +1,26 @@
+$fix-ie: false !default; //true if IE8-
+@import "bootstrap/variables";
+@import "bootstrap/mixins/clearfix";
+@import "mixins/responsive.scss";
+@import "mixins/grid";
+
+* {
+	box-sizing: border-box;
+}
+.box {
+	background-color: blue;
+	height: 200px;
+	@extend %col-xs-12;
+	@extend %col-sm-6;
+	@extend %col-md-3;
+	@extend %col-lg-1;
+	@extend %col-lg-offset-2;
+	&:first-child {
+		@extend %col-lg-offset-0;
+	}
+}
+.box2 {
+	height: 200px;
+	background-color: red;
+	@include make-col(12,6,3);
+} 
