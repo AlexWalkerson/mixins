@@ -1,4 +1,4 @@
-# Mixin Bootstrap grid and respond.scss
+# Mixin Bootstrap grid
 
 Это расширение для Bootstrap Sass созданное для упрощения работы с Bootstrap сеткой и оптимизации CSS.
 Проще говоря в CSS не попадают лишние селекторы.
